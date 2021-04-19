@@ -1,0 +1,128 @@
+// variables (scope)
+for(let i=0;i<6;i++){
+   var x=6
+   console.log(x)
+console.log(i)
+}
+console.log(i)
+ console.log(x)
+  const y=20
+ y=21
+
+ function printMyInfoo(name){
+  return "bonjour je suis"+" "+name
+}
+//template literals
+function printMyInfo(name){
+  return `bonjour je suis ${name}` // altgr+7
+}
+//arrow function
+function printMyInfo(name){
+  return name
+}
+const printMyInfo=(name)=>{return name}
+const printMyInfo=name=> name // we can omit return and parenthesis if we have only one instruction
+
+//ternary operator
+function isNull(x){
+  if(x===0){
+    return "x est null"
+  }
+  else return "x est different de 0"
+}
+const isNull=x=>x===0? "x est null": "x est different de 0"
+
+//array function 
+//findIndex
+let tab=[1,5,8,10,11,15]
+// let findMyIndex=tab.findIndex(el=>el>8)//retourne l'indice du premier elt qui satisfait cette condition
+// console.log(findMyIndex)
+
+// find
+let findMyIndex=tab.find(el=>el>8)//retourne le  premier elt qui satisfait cette condition
+console.log(findMyIndex)
+
+//map
+let tab=[1,5,8,10,11,15]
+let tab2=[]
+// tab2=tab.map(el=>el*2)
+// console.log(tab2)
+//filter 
+// tab2=tab.filter(el=>el>10)
+// console.log(tab2)
+
+//forEach
+// tab.forEach(el=>tab2.push(el*2))
+// console.log(tab2)
+// tab.forEach((el,i)=>tab[i]=el*2)
+// console.log(tab)
+
+//reduce
+let sum=0
+sum=tab.reduce((prev,current)=>prev+current)
+console.log(sum)
+//sort
+tab.sort((a,b)=>a-b)
+console.log(tab)
+tab.sort((a,b)=>b-a)
+console.log(tab)
+let users=[{name:"ali",age:21},{name:"salah",age:28},{name:"ahmed",age:28},{name:"ahmed",age:29}]
+//sommer les ages des pesonnes qui ont le nom ahmed et age entre 25 et 30 ( utiliser map filter reduce)
+let filteredUser=users.filter(user=>user.name==="ahmed" && user.age>25 && user.age<30).map(user=>user.age).reduce((prev,current)=>prev+current)
+console.log(filteredUser)
+//spreading operator 
+// let tab1=[1,8,7]
+//  let tab3=[3,2,1]
+// let tab2=[]
+// // tab2=tab1.concat(9,6)
+// // console.log(tab2)
+// // tab2=[...tab1,9,6]
+// // console.log(tab2)
+// tab2=[...tab1,...tab3]
+// console.log(tab2)
+const person1={
+  name:"salah",
+  age:29
+}
+const person2={
+  name:"ali",
+  age:26,
+  id:2,
+  email:"ali@gmail.com"
+}
+// let editedPerson={...person1,name:"Moez"}
+//  console.log(editedPerson)
+// let editedPerson={...person1,id:1}
+//  console.log(editedPerson)
+
+// let editedPerson={...person1,person2}
+// console.log(editedPerson)
+let editedPerson={...person1,...person2}
+ console.log(editedPerson)
+ function sum(x,y,z){
+return x+y+z  
+}
+let tab=[2,3,4] 
+console.log(sum(...tab))
+console.log(Math.max(tab))
+console.log(Math.min(...tab))
+//destructuring // extraction d'un ensemble d'elt d'un tableau ou objet
+// const tab=[1,2,3,4]
+// let element1=tab[0]
+// let element2=tab[1]
+// let element3=tab[2]
+// console.log(element1,element2,element3)
+// let [a,b,c]=tab
+// console.log(a,b,c)
+const user={
+  name:'ali',
+  age:25,
+  email:'ali@gmail.com'
+}
+// console.log(user1.name)
+// let {name,age,email}=user1
+// console.log(name,age,email)
+function printMyInfo({name,age}){
+  return `my name is ${name} Im ${age} years old`
+}
+console.log(printMyInfo(user))
